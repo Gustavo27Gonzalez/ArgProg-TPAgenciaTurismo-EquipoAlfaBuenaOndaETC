@@ -1,0 +1,9 @@
+Pinocho
+Dinero: 40
+Preferencia: TERROR
+Tiempo 7.0
+El usuario compro: 
+Bosque de las brujas
+Pack locura
+Dinero a pagar: 35
+Tiempo a invertir: 7.0

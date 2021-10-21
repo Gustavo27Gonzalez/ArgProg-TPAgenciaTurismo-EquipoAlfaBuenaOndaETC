@@ -1,0 +1,8 @@
+Blancanieves
+Dinero: 100
+Preferencia: BANQUETES
+Tiempo 5.0
+El usuario compro: 
+Pack degustacion
+Dinero a pagar: 50
+Tiempo a invertir: 4.5

@@ -1,0 +1,8 @@
+Burro
+Dinero: 25
+Preferencia: LOCURA
+Tiempo 12.0
+El usuario compro: 
+Pack locura
+Dinero a pagar: 25
+Tiempo a invertir: 5.0

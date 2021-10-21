@@ -1,0 +1,9 @@
+Arturo
+Dinero: 40
+Preferencia: ACCION
+Tiempo 30.0
+El usuario compro: 
+Pack accion
+Pack locura
+Dinero a pagar: 40
+Tiempo a invertir: 9.0

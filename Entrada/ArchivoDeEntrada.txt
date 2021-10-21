@@ -1,0 +1,23 @@
+BANQUETES,Banquete real,50,3,20,Un delicioso paseo por la realeza de Muy Muy Lejano.
+BANQUETES,La manzana envenenada,15,1.5,8,Peligroso lugar... te animas a probar ?
+BANQUETES,La casa de Merlin,5,1.5,2,Vas a probrar comidas que parecen magia!
+BANQUETES,Banquete en el pantano,10,2,5,Barro o chocolate? probalo por vos mismo!
+ACCION,Calabozos,10,1.5,2,Una aventura por las zonas mas peligrosas del reino!
+ACCION,Worcestershire,15,2.5,10,Visitaras un colegio muy particular
+ACCION,Torre del Dragon,25,2,4,CUIDADO! te vas a quemar!
+ACCION,Duloc,20,3,15,Un lugar inmenso, deberias verlo!
+LOCURA,Tour muy muy lejano,25,4,18,Un paseo general por todo el reino
+LOCURA,Fabrica del Hada Madrina,15,1,5,Un hada loca y muchas posiciones, te lo vas a perder?
+TERROR,El pantano,5,1,13,SOLO PARA VALIENTES!
+TERROR,Bosque de las brujas,10,2,6,Mira bien detras de las ramas... hay seres esperandote!
+ABSOLUTA,BANQUETES,Pack degustacion,15,Banquete real,La manzana envenenada,Con un descuento de 15 monedas te presentamos una promo para RE-VEN-TAR
+PORCENTUAL,ACCION,Pack accion,40,Worcestershire,Calabozos,Solo x hoy! 40% off, si sos muy valiente, esta es tu promo!
+AXB,LOCURA,Pack locura,Fabrica del Hada Madrina,Fabrica del Hada Madrina,Tour muy muy lejano,Llevas 3 pagas 2. Escuchaste bien nosotros tambien nos volvimos locos! 
+USUARIO,Encantador,200,BANQUETES,20
+USUARIO,Hermanastra fea,75,ACCION,15
+USUARIO,Burro,25,LOCURA,12
+USUARIO,Pinocho,40,TERROR,7
+USUARIO,Arturo,40,ACCION,30
+USUARIO,Jengibre,120,BANQUETES,25
+USUARIO,Blancanieves,100,BANQUETES,5
+USUARIO,Lancelot,150,TERROR,8

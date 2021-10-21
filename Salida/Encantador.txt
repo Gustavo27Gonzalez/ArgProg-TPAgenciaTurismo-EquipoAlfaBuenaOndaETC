@@ -1,0 +1,14 @@
+Encantador
+Dinero: 200
+Preferencia: BANQUETES
+Tiempo 20.0
+El usuario compro: 
+Banquete en el pantano
+La casa de Merlin
+Torre del Dragon
+El pantano
+Pack degustacion
+Pack locura
+Pack accion
+Dinero a pagar: 135
+Tiempo a invertir: 20.0

@@ -1,0 +1,7 @@
+Garfio
+Dinero: 50
+Preferencia: ACCION
+Tiempo 7.0
+El usuario compro: 
+Dinero a pagar: 0
+Tiempo a invertir: 0.0
