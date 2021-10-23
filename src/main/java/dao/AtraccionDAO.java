@@ -151,7 +151,7 @@ public class AtraccionDAO{
 		}
 	}
 
-	public int countAll() {
+	public int countAll() throws SQLException {
 		try {
 			String sql = "SELECT count(*) AS 'total' FROM atracciones";
 			conn = ConnectionProvider.getConnection();
@@ -175,7 +175,7 @@ public class AtraccionDAO{
 		}
 	}
 
-	public List<Atraccion> findAll() {
+	public List<Atraccion> findAll() throws SQLException {
 		try {
 			String sql = "SELECT * FROM atracciones";
 			conn = ConnectionProvider.getConnection();
