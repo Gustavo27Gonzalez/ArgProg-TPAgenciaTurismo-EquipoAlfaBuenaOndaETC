@@ -14,7 +14,8 @@ import tipos.Tipo;
  *
  */
 public class Usuario {
-
+	
+	private final int id;
 	private final String nombre;
 	private int dineroDisponible;
 	private final int dineroInicial;
@@ -33,13 +34,18 @@ public class Usuario {
 	 * @param preferencia,      tipoTipo !null
 	 * @param tiempo,           double !=null
 	 */
-	public Usuario(String nombre, int dineroDisponible, Tipo preferencia, double tiempo) {
+	public Usuario(String nombre, int dineroDisponible, Tipo preferencia, double tiempo, int id) {
+		this.id = id;
 		this.nombre = nombre;
 		this.dineroInicial = dineroDisponible;
 		this.tiempoInicial = tiempo;
 		this.dineroDisponible = dineroDisponible;
 		this.preferencia = preferencia;
 		this.tiempo = tiempo;
+	}
+
+	public int getId() {
+		return id;
 	}
 
 	public int getDineroInicial() {

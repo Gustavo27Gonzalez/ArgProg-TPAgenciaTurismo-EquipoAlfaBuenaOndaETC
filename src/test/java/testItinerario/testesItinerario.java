@@ -38,9 +38,9 @@ public class testesItinerario {
 		
 		promo = new PromoAbsoluta("Furia", Tipo.ACCION, absoluto, "descripcion");
 		
-		u1 = new Usuario("J", 50, Tipo.ACCION, 60.0);
-		u2 = new Usuario("C", 70, Tipo.ACCION, 40.0);
-		u3 = new Usuario("M", 100, Tipo.ACCION, 30.0);
+		u1 = new Usuario("J", 50, Tipo.ACCION, 60.0, 1);
+		u2 = new Usuario("C", 70, Tipo.ACCION, 40.0, 2);
+		u3 = new Usuario("M", 100, Tipo.ACCION, 30.0, 3);
 	}
 
 	@Test

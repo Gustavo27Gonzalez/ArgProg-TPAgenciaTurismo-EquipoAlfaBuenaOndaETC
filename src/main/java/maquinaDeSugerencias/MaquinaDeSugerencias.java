@@ -6,6 +6,7 @@ import java.util.Scanner;
 import atraccion.Atraccion;
 import comparador.Comparador;
 import consola.Consola;
+import dao.UsuarioDAOImpl;
 import ofertable.Ofertable;
 import promociones.Promocion;
 import readerWriter.ReaderWriter;
@@ -93,7 +94,7 @@ public class MaquinaDeSugerencias {
 	 */
 	public static void iterarListas() {
 
-		for (Usuario usuario : ReaderWriter.listaUsuarios) {
+		for (Usuario usuario : UsuarioDAOImpl.listaUsuarios) {
 			Consola.primerMensaje(usuario);
 			ordenarListas(usuario);
 
