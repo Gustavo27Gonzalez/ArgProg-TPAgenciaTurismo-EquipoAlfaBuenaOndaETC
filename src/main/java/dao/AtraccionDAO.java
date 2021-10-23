@@ -10,7 +10,7 @@ import java.util.List;
 import jdbc.ConnectionProvider;
 import model.Atraccion;
 
-public class AtraccionDAO {
+public class AtraccionDAO{
 	
 	private Connection conn;
 	
@@ -151,7 +151,7 @@ public class AtraccionDAO {
 		}
 	}
 
-	public int countAll() throws SQLException {
+	public int countAll() {
 		try {
 			String sql = "SELECT count(*) AS 'total' FROM atracciones";
 			conn = ConnectionProvider.getConnection();
@@ -175,7 +175,7 @@ public class AtraccionDAO {
 		}
 	}
 
-	public List<Atraccion> findAll() throws SQLException {
+	public List<Atraccion> findAll() {
 		try {
 			String sql = "SELECT * FROM atracciones";
 			conn = ConnectionProvider.getConnection();
@@ -204,6 +204,8 @@ public class AtraccionDAO {
 	private Atraccion toAtraccion(ResultSet resultados) throws SQLException {
 		return new Atraccion(resultados.getInt("id"), resultados.getString("nombre"), resultados.getString("tipo"), resultados.getInt("costo"), resultados.getDouble("duracion"), resultados.getInt("cupo"), resultados.getString("descripcion"));
 	}
+
+	
 	
 	/*
 	 try {
