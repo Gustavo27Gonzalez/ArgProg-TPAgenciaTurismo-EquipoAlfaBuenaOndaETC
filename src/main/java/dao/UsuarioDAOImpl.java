@@ -12,8 +12,8 @@ import tipos.Tipo;
 import usuario.Usuario;
 
 public class UsuarioDAOImpl implements UsuarioDAO {
-	
-	public ArrayList<Usuario> listaUsuarios = new ArrayList<Usuario>();
+
+	public static ArrayList<Usuario> listaUsuarios = new ArrayList<Usuario>();
 	private Connection conn;
 
 	@Override
@@ -62,7 +62,7 @@ public class UsuarioDAOImpl implements UsuarioDAO {
 			String sql = "SELECT * FROM usuarios";
 			conn = ConnectionProvider.getConnection();
 			PreparedStatement statement = conn.prepareStatement(sql);
-			ResultSet rs = statement.executeQuery(sql);
+			ResultSet rs = statement.executeQuery();
 			while (rs.next()) {
 				int id = rs.getInt("id");
 				String nombre = rs.getString("nombre");
@@ -73,7 +73,7 @@ public class UsuarioDAOImpl implements UsuarioDAO {
 				listaUsuarios.add(new Usuario(nombre, dineroDisponible, preferencia, tiempo, id));
 			}
 
-		} catch (Exception  e) {
+		} catch (Exception e) {
 			throw new MissingDataException(e);
 		} finally {
 			if (conn != null) {
