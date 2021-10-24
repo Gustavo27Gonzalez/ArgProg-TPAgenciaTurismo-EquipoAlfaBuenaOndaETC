@@ -27,9 +27,9 @@ public class TestesAbsoluta {
 
 	@Before
 	public void iniciarAtracciones() {
-		primerAtraccion = new Atraccion("Aguilares", Tipo.ACCION, 10, 10.0, 99, "descripcion");
-		segundaAtraccion = new Atraccion("Roma", Tipo.ACCION, 10, 10.0, 99, "descripcion");
-		tercerAtraccion = new Atraccion("Tokyo", Tipo.ACCION, 10, 10.0, 99, "descripcion");
+		primerAtraccion = new Atraccion(1, "Aguilares", Tipo.ACCION, 10, 10.0, 99, "descripcion");
+		segundaAtraccion = new Atraccion(2, "Roma", Tipo.ACCION, 10, 10.0, 99, "descripcion");
+		tercerAtraccion = new Atraccion(3, "Tokyo", Tipo.ACCION, 10, 10.0, 99, "descripcion");
 		suma = 0;
 		absoluto = 20;
 		duraciones = 0.0;

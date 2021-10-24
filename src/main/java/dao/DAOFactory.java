@@ -10,4 +10,8 @@ public class DAOFactory {
 		return new ItinerarioDAO();
 	}
 	
+	public static AtraccionDAO getAtraccionDAO() {
+		return new AtraccionDAO();
+	}
+	
 }

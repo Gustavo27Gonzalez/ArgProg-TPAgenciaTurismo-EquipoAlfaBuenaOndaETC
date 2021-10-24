@@ -14,72 +14,109 @@ import tipos.Tipo;
  */
 public class Atraccion implements Ofertable {
 
-	/**
-	 * Nombre de la atraccion.
-	 */
+	private Integer id;
 	private String nombre;
-	/**
-	 * Tipo de la atraccion : Aventura, accion, etc.
-	 */
 	private Tipo tipo;
-	/**
-	 * Costo de entrada.
-	 */
 	private Integer costo;
-	/**
-	 * Tiempo que toma recorrer la atraccion.
-	 */
 	private Double duracion;
-	/**
-	 * Cupo de usuarios inicial.
-	 */
 	private Integer cupoMaximo;
-	/**
-	 * Cupo de usuarios variable(contabiliza los ingresos).
-	 */
 	private Integer lugaresDisponibles;
-	/**
-	 * Descripcion para mostrar en consola.
-	 */
 	private String breveDescripcion;
 
-	// Metodos publicos
-
-	/**
-	 * Constructor
-	 * 
-	 * @param nombre            de la atraccion String != null
-	 * @param tipo              de la atraccion, enum != null
-	 * @param costo             de entrada, Integer != < 0, != null
-	 * @param duracion          de recorrida Double != < 1, != null
-	 * @param cupo              de personas, Integer != <1, !null
-	 * @param breveDescripcion, String != null
-	 */
-
-	public Atraccion(String nombre, Tipo tipo, Integer costo, Double duracion, Integer cupo, String breveDescripcion) {
+	public Atraccion(Integer id, String nombre, Tipo tipo ,Integer costo, Double duracion, Integer cupo, String breveDescripcion) {
+		this.id = id;
 		this.nombre = nombre;
 		this.tipo = tipo;
 		this.costo = costo;
 		this.duracion = duracion;
 		this.cupoMaximo = cupo;
-		this.lugaresDisponibles = this.cupoMaximo;
 		this.breveDescripcion = breveDescripcion;
+		this.lugaresDisponibles = this.cupoMaximo;
+	}
+	
+	public Integer getId() {
+		return this.id;
+	}
+	
+	public void setId(Integer id) {
+		this.id = id;
+	}
+	
+	public String getNombre() {
+		return this.nombre;
 	}
 
-	/**
-	 * Comprueba que no hayan ingresado usuarios a la atraccion
-	 * 
-	 * @return boolean
-	 */
+	public void setNombre(String nombre) {
+		this.nombre = nombre;
+	}
+	
+	public Tipo getTipo() {
+		return this.tipo;
+	}
+	
+	public void setTipo(Tipo tipo) {
+		this.tipo = tipo;
+	}
+	
+	@Override
+	public Integer getCosto() {
+		return this.costo;
+	}
+	
+	public void setCosto(Integer costo) {
+		this.costo = costo;
+	}
+	
+	@Override
+	public Double getDuracion() {
+		return duracion;
+	}
+	
+	public void setDuracion(Double duracion) {
+		this.duracion = duracion;
+	}
+	
+	public Integer getCupoMaximo() {
+		return cupoMaximo;
+	}
+	
+	public void setCupoMaximo(Integer cupo) {
+		this.cupoMaximo = cupo;
+	}
+	
+	@Override
+	public String getBreveDescripcion() {
+		return breveDescripcion;
+	}
+	
+	public void setBreveDescripcion(String descripcion) {
+		this.breveDescripcion = descripcion;
+	}
+	
+	public Integer getLugaresDisponibles() {
+		return lugaresDisponibles;
+	}
+	
+	@Override
+	public void setLugaresDisponibles(Integer lugaresDisponibles) {
+		this.lugaresDisponibles = lugaresDisponibles;
+	}
+	
+	@Override
+	public boolean esPromocion() {
+		return false;
+	}
+	
+	@Override
+	public String toString() {
+		return "\r\n" + "Atraccion{ " + nombre + "," + "\r\n" + "costo=" + costo + "," + "\r\n" + "duracion=" + duracion
+				+ "," + "\r\n" + breveDescripcion + '}';
+	}
+	
 	public boolean estaVacio() {
 		return (this.lugaresDisponibles == this.cupoMaximo);
 	}
 
-	/**
-	 * Comprueba que haya lugar disponible y resta 1 cupo
-	 * 
-	 * @return boolean
-	 */
 	public Boolean entrarALaAtraccion() {
 		if (quedaLugarDisponible()) {
 			this.lugaresDisponibles--;
@@ -88,68 +125,8 @@ public class Atraccion implements Ofertable {
 		return false;
 	}
 
-	/**
-	 * Comprueba que se pueda ingresar a la atraccion
-	 * 
-	 * @return boolean
-	 */
 	public Boolean quedaLugarDisponible() {
-		if (this.lugaresDisponibles > 0) {
-			return true;
-		} else {
-			return false;
-		}
-	}
-
-	public String getNombre() {
-		return this.nombre;
-	}
-
-	public void setNombre(String nombre) {
-		this.nombre = nombre;
-	}
-
-	@Override
-	public Integer getCosto() {
-		return this.costo;
-	}
-
-	public Integer getCupoMaximo() {
-		return cupoMaximo;
-	}
-
-	@Override
-	public void setLugaresDisponibles(Integer lugaresDisponibles) {
-		this.lugaresDisponibles = lugaresDisponibles;
-	}
-
-	public Integer getLugaresDisponibles() {
-		return lugaresDisponibles;
-	}
-
-	public Tipo getTipo() {
-		return tipo;
-	}
-
-	@Override
-	public Double getDuracion() {
-		return duracion;
-	}
-
-	@Override
-	public boolean esPromocion() {
-		return false;
-	}
-
-	@Override
-	public String getBreveDescripcion() {
-		return breveDescripcion;
-	}
-
-	@Override
-	public String toString() {
-		return "\r\n" + "Atraccion{ " + nombre + "," + "\r\n" + "costo=" + costo + "," + "\r\n" + "duracion=" + duracion
-				+ "," + "\r\n" + breveDescripcion + '}';
+		return this.lugaresDisponibles > 0 ? true : false;
 	}
 
 	@Override

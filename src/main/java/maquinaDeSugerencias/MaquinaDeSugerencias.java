@@ -6,10 +6,10 @@ import java.util.Scanner;
 import atraccion.Atraccion;
 import comparador.Comparador;
 import consola.Consola;
+import dao.AtraccionDAO;
 import dao.UsuarioDAOImpl;
 import ofertable.Ofertable;
 import promociones.Promocion;
-import readerWriter.ReaderWriter;
 import usuario.Usuario;
 
 /**
@@ -83,8 +83,8 @@ public class MaquinaDeSugerencias {
 	 */
 	public static void ordenarListas(Usuario usuario) {
 
-		Collections.sort(ReaderWriter.listaPromociones, new Comparador(usuario.getPreferencia()));
-		Collections.sort(ReaderWriter.listaAtracciones, new Comparador(usuario.getPreferencia()));
+		Collections.sort(PromocionDAO.listaPromociones, new Comparador(usuario.getPreferencia()));
+		Collections.sort(AtraccionDAO.listaAtracciones, new Comparador(usuario.getPreferencia()));
 
 	}
 
@@ -98,14 +98,14 @@ public class MaquinaDeSugerencias {
 			Consola.primerMensaje(usuario);
 			ordenarListas(usuario);
 
-			for (Promocion promocion : ReaderWriter.listaPromociones) {
+			for (Promocion promocion : PromocionDAO.listaPromociones) {
 
 				if (MaquinaDeSugerencias.puedeComprar(usuario, promocion)) {
 
 					ofertar(promocion, usuario);
 				}
 			}
-			for (Atraccion atraccion : ReaderWriter.listaAtracciones) {
+			for (Atraccion atraccion : AtraccionDAO.listaAtracciones) {
 
 				if (MaquinaDeSugerencias.puedeComprar(usuario, atraccion)) {
 					ofertar(atraccion, usuario);

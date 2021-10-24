@@ -38,9 +38,9 @@ public class TestesOrdenes {
 	@Test
 	public void testOrdenUno() {
 
-		primerAtraccion = new Atraccion("Uno", Tipo.ACCION, 5, 2.0, 10, "descripcion");
-		segundaAtraccion = new Atraccion("Dos", Tipo.ACCION, 6, 3.0, 11, "descripcion");
-		tercerAtraccion = new Atraccion("Tres", Tipo.ACCION, 4, 5.0, 12, "descripcion");
+		primerAtraccion = new Atraccion(1, "Uno", Tipo.ACCION, 5, 2.0, 10, "descripcion");
+		segundaAtraccion = new Atraccion(2, "Dos", Tipo.ACCION, 6, 3.0, 11, "descripcion");
+		tercerAtraccion = new Atraccion(3, "Tres", Tipo.ACCION, 4, 5.0, 12, "descripcion");
 		listaAtracciones.add(primerAtraccion);
 		listaAtracciones.add(segundaAtraccion);
 		listaAtracciones.add(tercerAtraccion);
@@ -62,9 +62,9 @@ public class TestesOrdenes {
 	@Test
 	public void testOrdenDos() {
 
-		primerAtraccion = new Atraccion("Uno", Tipo.ACCION, 6, 2.0, 10, "descripcion");
-		segundaAtraccion = new Atraccion("Dos", Tipo.ACCION, 6, 3.0, 11, "descripcion");
-		tercerAtraccion = new Atraccion("Tres", Tipo.ACCION, 6, 5.0, 12, "descripcion");
+		primerAtraccion = new Atraccion(1, "Uno", Tipo.ACCION, 6, 2.0, 10, "descripcion");
+		segundaAtraccion = new Atraccion(2, "Dos", Tipo.ACCION, 6, 3.0, 11, "descripcion");
+		tercerAtraccion = new Atraccion(3, "Tres", Tipo.ACCION, 6, 5.0, 12, "descripcion");
 		listaAtracciones.add(primerAtraccion);
 		listaAtracciones.add(segundaAtraccion);
 		listaAtracciones.add(tercerAtraccion);
@@ -86,10 +86,10 @@ public class TestesOrdenes {
 	@Test
 	public void testOrdenTres() {
 
-		primerAtraccion = new Atraccion("Uno", Tipo.ACCION, 6, 4.0, 10, "descripcion");
-		segundaAtraccion = new Atraccion("Dos", Tipo.BANQUETES, 7, 6.0, 11, "descripcion");
-		tercerAtraccion = new Atraccion("Tres", Tipo.ACCION, 6, 5.0, 12, "descripcion");
-		cuartaAtraccion = new Atraccion("Cuatro", Tipo.LOCURA, 8, 2.0, 8, "descripcion");
+		primerAtraccion = new Atraccion(1, "Uno", Tipo.ACCION, 6, 4.0, 10, "descripcion");
+		segundaAtraccion = new Atraccion(2, "Dos", Tipo.BANQUETES, 7, 6.0, 11, "descripcion");
+		tercerAtraccion = new Atraccion(3, "Tres", Tipo.ACCION, 6, 5.0, 12, "descripcion");
+		cuartaAtraccion = new Atraccion(4, "Cuatro", Tipo.LOCURA, 8, 2.0, 8, "descripcion");
 		unicaPromo = new PromoAbsoluta("Promo", Tipo.ACCION, 10, "descripcion");
 		listaAtracciones.add(primerAtraccion);
 		listaAtracciones.add(segundaAtraccion);

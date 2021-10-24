@@ -27,9 +27,9 @@ public class TestesRegala {
 
 	@Before
 	public void iniciarAtracciones() {
-		primerAtraccion = new Atraccion("Aguilares", Tipo.ACCION, 10, 10.0, 10, "descripcion");
-		segundaAtraccion = new Atraccion("Roma", Tipo.ACCION, 100, 100.0, 10, "descripcion");
-		tercerAtraccion = new Atraccion("Tokyo", Tipo.ACCION, 1000, 1000.0, 10, "descripcion");
+		primerAtraccion = new Atraccion(1, "Aguilares", Tipo.ACCION, 10, 10.0, 10, "descripcion");
+		segundaAtraccion = new Atraccion(2, "Roma", Tipo.ACCION, 100, 100.0, 10, "descripcion");
+		tercerAtraccion = new Atraccion(3, "Tokyo", Tipo.ACCION, 1000, 1000.0, 10, "descripcion");
 
 		regalo = tercerAtraccion;
 

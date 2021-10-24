@@ -8,8 +8,9 @@ import java.util.ArrayList;
 import java.util.LinkedList;
 import java.util.List;
 
+import atraccion.Atraccion;
 import jdbc.ConnectionProvider;
-import model.Atraccion;
+import tipos.Tipo;
 
 public class AtraccionDAO{
 	
@@ -24,7 +25,7 @@ public class AtraccionDAO{
 			PreparedStatement statement = conn.prepareStatement(sql);
 			statement.setInt(1, atraccion.getId());
 			statement.setString(2, atraccion.getNombre());
-			statement.setString(3, atraccion.getTipo());
+			statement.setString(3, atraccion.getTipo().toString());
 			statement.setInt(4, atraccion.getCosto());
 			statement.setDouble(5, atraccion.getDuracion());
 			statement.setInt(6, atraccion.getCupoMaximo());
@@ -52,7 +53,7 @@ public class AtraccionDAO{
 
 			PreparedStatement statement = conn.prepareStatement(sql);
 			statement.setString(1, atraccion.getNombre());
-			statement.setString(2, atraccion.getTipo());
+			statement.setString(2, atraccion.getTipo().toString());
 			statement.setInt(3, atraccion.getCosto());
 			statement.setDouble(4, atraccion.getDuracion());
 			statement.setInt(5, atraccion.getCupoMaximo());
@@ -204,7 +205,7 @@ public class AtraccionDAO{
 	}
 
 	private Atraccion toAtraccion(ResultSet resultados) throws SQLException {
-		return new Atraccion(resultados.getInt("id"), resultados.getString("nombre"), resultados.getString("tipo"), resultados.getInt("costo"), resultados.getDouble("duracion"), resultados.getInt("cupo"), resultados.getString("descripcion"));
+		return new Atraccion(resultados.getInt("id"), resultados.getString("nombre"), Tipo.valueOf(resultados.getString("tipo")), resultados.getInt("costo"), resultados.getDouble("duracion"), resultados.getInt("cupo"), resultados.getString("descripcion"));
 	}
 
 	public void createArray() {
@@ -216,7 +217,7 @@ public class AtraccionDAO{
 			while (rs.next()) {
 				int id = rs.getInt("id");
 				String nombre = rs.getString("nombre");
-				String tipo = rs.getString("tipo");
+				Tipo tipo = Tipo.valueOf(rs.getString("tipo"));
 				int costo = rs.getInt("costo");
 				double duracion = rs.getDouble("duracion");
 				int cupo = rs.getInt("cupo");

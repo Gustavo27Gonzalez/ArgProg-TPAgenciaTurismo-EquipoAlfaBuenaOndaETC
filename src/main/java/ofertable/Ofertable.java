@@ -15,7 +15,7 @@ public interface Ofertable {
 
 	public Double getDuracion();
 
-	public String getTipo();
+	public Tipo getTipo();
 
 	public Integer getCosto();
 
