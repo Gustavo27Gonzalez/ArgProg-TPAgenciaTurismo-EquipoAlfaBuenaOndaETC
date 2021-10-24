@@ -85,6 +85,13 @@ public class UsuarioDAOImpl implements UsuarioDAO {
 			}
 		}
 	}
+	
+	public void actualizarDBUsuarios() {
+		for (Usuario usuario : listaUsuarios) {
+			this.update(usuario);
+		}
+			
+	}
 
 	@Override
 	public int delete(Usuario t) {
