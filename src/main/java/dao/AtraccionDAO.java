@@ -4,6 +4,7 @@ import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.util.ArrayList;
 import java.util.LinkedList;
 import java.util.List;
 
@@ -12,6 +13,7 @@ import model.Atraccion;
 
 public class AtraccionDAO{
 	
+	public static ArrayList<Atraccion> listaAtracciones = new ArrayList<Atraccion>();
 	private Connection conn;
 	
 	public int insert(Atraccion atraccion) throws SQLException {
@@ -205,7 +207,41 @@ public class AtraccionDAO{
 		return new Atraccion(resultados.getInt("id"), resultados.getString("nombre"), resultados.getString("tipo"), resultados.getInt("costo"), resultados.getDouble("duracion"), resultados.getInt("cupo"), resultados.getString("descripcion"));
 	}
 
+	public void createArray() {
+		try {
+			String sql = "SELECT * FROM atracciones";
+			conn = ConnectionProvider.getConnection();
+			PreparedStatement statement = conn.prepareStatement(sql);
+			ResultSet rs = statement.executeQuery();
+			while (rs.next()) {
+				int id = rs.getInt("id");
+				String nombre = rs.getString("nombre");
+				String tipo = rs.getString("tipo");
+				int costo = rs.getInt("costo");
+				double duracion = rs.getDouble("duracion");
+				int cupo = rs.getInt("cupo");
+				String descripcion = rs.getString("descripcion");
+
+				listaAtracciones.add(new Atraccion(id, nombre, tipo, costo, duracion, cupo, descripcion));
+			}
+		} catch (Exception e) {
+			throw new MissingDataException(e);
+		} finally {
+			if (conn != null) {
+				try {
+					conn.close();
+				} catch (SQLException e) {
+					e.printStackTrace();
+				}
+			}
+		}
+	}
 	
+	public void actualizarDBAtracciones() throws SQLException {
+		for (Atraccion atraccion : listaAtracciones) {
+			this.update(atraccion);
+		}
+	}
 	
 	/*
 	 try {
