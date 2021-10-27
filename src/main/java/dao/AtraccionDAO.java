@@ -204,7 +204,7 @@ public class AtraccionDAO{
 		}
 	}
 
-	private Atraccion toAtraccion(ResultSet resultados) throws SQLException {
+	public Atraccion toAtraccion(ResultSet resultados) throws SQLException {
 		return new Atraccion(resultados.getInt("id"), resultados.getString("nombre"), Tipo.valueOf(resultados.getString("tipo")), resultados.getInt("costo"), resultados.getDouble("duracion"), resultados.getInt("cupo"), resultados.getString("descripcion"));
 	}
 
