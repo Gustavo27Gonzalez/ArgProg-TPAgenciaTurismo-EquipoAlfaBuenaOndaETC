@@ -99,7 +99,7 @@ public class MaquinaDeSugerencias {
 			Consola.primerMensaje(usuario);
 			ordenarListas(usuario);
 
-			for (Promocion promocion : PromocionDAO.listaPromociones) {
+			for (Promocion promocion : PromocionDAOimpl.listaPromociones) {
 
 				if (MaquinaDeSugerencias.puedeComprar(usuario, promocion)) {
 
