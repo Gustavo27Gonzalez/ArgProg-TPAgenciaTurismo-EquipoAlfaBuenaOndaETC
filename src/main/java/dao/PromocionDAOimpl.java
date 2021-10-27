@@ -5,7 +5,7 @@ import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
-import java.util.LinkedList;
+import java.util.ArrayList;
 import java.util.List;
 import java.util.logging.Level;
 import java.util.logging.Logger;
@@ -18,7 +18,14 @@ import tipos.Tipo;
 
 public class PromocionDAOimpl implements PromocionDAO {
 
+    List<Promocion> promo = new ArrayList<Promocion>();
     private Connection conn;
+
+    private AtraccionDAO AtraccionDAO;
+
+    public PromocionDAOimpl() {
+        this.AtraccionDAO = new AtraccionDAO();
+    }
 
     public List<Promocion> findAll() {
         try {
@@ -27,7 +34,6 @@ public class PromocionDAOimpl implements PromocionDAO {
             PreparedStatement statement = conn.prepareStatement(sql);
             ResultSet resultados = statement.executeQuery();
 
-            List<Promocion> promo = new LinkedList<Promocion>();
             while (resultados.next()) {
                 try {
                     promo.add(toPromo(resultados));
@@ -65,6 +71,15 @@ public class PromocionDAOimpl implements PromocionDAO {
             return total;
         } catch (SQLException ex) {
             Logger.getLogger(PromocionDAOimpl.class.getName()).log(Level.SEVERE, null, ex);
+        } finally {
+            if (conn != null) {
+                try {
+                    conn.close();
+                } catch (SQLException e) {
+                    e.printStackTrace();
+                }
+
+            }
         }
         return 0;
     }
@@ -88,9 +103,18 @@ public class PromocionDAOimpl implements PromocionDAO {
             return rows;
         } catch (SQLException ex) {
             Logger.getLogger(PromocionDAOimpl.class.getName()).log(Level.SEVERE, null, ex);
+        } finally {
+            if (conn != null) {
+                try {
+                    conn.close();
+                } catch (SQLException e) {
+                    e.printStackTrace();
+                }
+
+            }
+
         }
         return 0;
-
     }
 
     public int update(Promocion t) {
@@ -106,15 +130,23 @@ public class PromocionDAOimpl implements PromocionDAO {
             return rows;
         } catch (SQLException ex) {
             Logger.getLogger(PromocionDAOimpl.class.getName()).log(Level.SEVERE, null, ex);
-        }
-        return 0;
+        } finally {
+            if (conn != null) {
+                try {
+                    conn.close();
+                } catch (SQLException e) {
+                    e.printStackTrace();
+                }
 
+            }
+            return 0;
+        }
     }
 
     public int delete(Promocion t) {
         try {
             String sql = "DELETE FROM Promocion WHERE Nombre LIKE ?";
-            Connection conn = ConnectionProvider.getConnection();
+            conn = ConnectionProvider.getConnection();
 
             PreparedStatement statement = conn.prepareStatement(sql);
             statement.setString(1, t.getNombre());
@@ -123,9 +155,17 @@ public class PromocionDAOimpl implements PromocionDAO {
             return rows;
         } catch (SQLException ex) {
             Logger.getLogger(PromocionDAOimpl.class.getName()).log(Level.SEVERE, null, ex);
-        }
-        return 0;
+        } finally {
+            if (conn != null) {
+                try {
+                    conn.close();
+                } catch (SQLException e) {
+                    e.printStackTrace();
+                }
 
+            }
+            return 0;
+        }
     }
 
     private Promocion toPromo(ResultSet resultados) throws Exception {
@@ -160,7 +200,7 @@ public class PromocionDAOimpl implements PromocionDAO {
         Atraccion[] promos = new Atraccion[2];
         try {
 
-            Connection conn = ConnectionProvider.getConnection();
+            conn = ConnectionProvider.getConnection();
             PreparedStatement statement = conn.prepareStatement(sqlAtraccion());
             statement.setLong(1, atraccion1);
             ResultSet result = statement.executeQuery();
@@ -172,10 +212,19 @@ public class PromocionDAOimpl implements PromocionDAO {
             ResultSet result2 = statement.executeQuery();
             while (result2.next()) {
                 promos[1] = AtraccionDAO.toAtraccion(result2);
+                //promos[1] = AtraccionDAO.toAtraccion(result2);
             }
             return promos;
-        } catch (Exception e) {
+        } catch (SQLException e) {
             throw new Exception();
+        } finally {
+            if (conn != null) {
+                try {
+                    conn.close();
+                } catch (SQLException e) {
+                    e.printStackTrace();
+                }
+            }
         }
     }
 
@@ -205,6 +254,15 @@ public class PromocionDAOimpl implements PromocionDAO {
             return atraccion;
         } catch (Exception e) {
             throw new MissingDataException(e);
+        } finally {
+            if (conn != null) {
+                try {
+                    conn.close();
+                } catch (SQLException e) {
+                    e.printStackTrace();
+                }
+
+            }
         }
     }
 }
