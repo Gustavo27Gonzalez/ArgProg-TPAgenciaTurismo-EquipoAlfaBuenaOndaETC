@@ -18,7 +18,7 @@ import tipos.Tipo;
 
 public class PromocionDAOimpl implements PromocionDAO {
 
-    List<Promocion> promo = new ArrayList<Promocion>();
+    public static List<Promocion> listaPromociones = new ArrayList<Promocion>();
     private Connection conn;
 
     private AtraccionDAO AtraccionDAO;
@@ -36,13 +36,13 @@ public class PromocionDAOimpl implements PromocionDAO {
 
             while (resultados.next()) {
                 try {
-                    promo.add(toPromo(resultados));
+                    listaPromociones.add(toPromo(resultados));
                 } catch (Exception e) {
 
                     throw new MissingDataException(e);
                 }
             }
-            return promo;
+            return listaPromociones;
         } catch (SQLException ex) {
             Logger.getLogger(PromocionDAOimpl.class.getName()).log(Level.SEVERE, null, ex);
         } finally {

@@ -7,6 +7,7 @@ import atraccion.Atraccion;
 import comparador.Comparador;
 import consola.Consola;
 import dao.AtraccionDAO;
+import dao.PromocionDAOimpl;
 import dao.UsuarioDAOImpl;
 import ofertable.Ofertable;
 import promociones.Promocion;
@@ -83,7 +84,7 @@ public class MaquinaDeSugerencias {
 	 */
 	public static void ordenarListas(Usuario usuario) {
 
-		Collections.sort(PromocionDAO.listaPromociones, new Comparador(usuario.getPreferencia()));
+		Collections.sort(PromocionDAOimpl.listaPromociones, new Comparador(usuario.getPreferencia()));
 		Collections.sort(AtraccionDAO.listaAtracciones, new Comparador(usuario.getPreferencia()));
 
 	}
