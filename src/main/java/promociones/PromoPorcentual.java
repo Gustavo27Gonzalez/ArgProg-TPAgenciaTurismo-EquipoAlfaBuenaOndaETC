@@ -60,4 +60,8 @@ public class PromoPorcentual extends Promocion implements Ofertable {
 		return breveDescripcion;
 	}
 
+    public Integer getPorcentaje() {
+        return porcentaje;
+    }
+
 }
