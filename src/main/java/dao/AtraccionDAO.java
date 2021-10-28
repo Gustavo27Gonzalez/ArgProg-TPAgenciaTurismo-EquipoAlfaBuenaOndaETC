@@ -215,10 +215,10 @@ public class AtraccionDAO{
 			PreparedStatement statement = conn.prepareStatement(sql);
 			ResultSet rs = statement.executeQuery();
 			while (rs.next()) {
-				int id = rs.getInt("id");
+				Integer id = rs.getInt("id");
 				String nombre = rs.getString("nombre");
 				Tipo tipo = Tipo.valueOf(rs.getString("tipo"));
-				int costo = rs.getInt("costo");
+				Integer costo = rs.getInt("costo");
 				double duracion = rs.getDouble("duracion");
 				int cupo = rs.getInt("cupo");
 				String descripcion = rs.getString("descripcion");

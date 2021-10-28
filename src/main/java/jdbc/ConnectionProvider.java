@@ -10,9 +10,7 @@ public class ConnectionProvider {
 	private static Connection connection;
 	
 	public static Connection getConnection() throws SQLException {
-		if (connection == null) {
-			connection = DriverManager.getConnection(url);			
-		}
+		connection = DriverManager.getConnection(url);			
 		return connection;
 	}
 
