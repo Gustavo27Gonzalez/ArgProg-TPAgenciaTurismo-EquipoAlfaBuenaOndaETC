@@ -58,4 +58,9 @@ public class PromoAbsoluta extends Promocion implements Ofertable {
 		return breveDescripcion;
 	}
 
+	@Override
+	public Tipo getTipo() {
+		return this.getTipoAtraccion();
+	}
+
 }

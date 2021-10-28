@@ -64,4 +64,9 @@ public class PromoPorcentual extends Promocion implements Ofertable {
         return porcentaje;
     }
 
+	@Override
+	public Tipo getTipo() {
+		return this.getTipoAtraccion();
+	}
+
 }
