@@ -6,6 +6,7 @@ import java.sql.SQLException;
 import dao.AtraccionDAO;
 import dao.DAOFactory;
 import dao.ItinerarioDAO;
+import dao.PromocionDAO;
 import dao.UsuarioDAO;
 import maquinaDeSugerencias.MaquinaDeSugerencias;
 
@@ -17,6 +18,8 @@ public class App {
 		usuarioDAO.createArray();
 		AtraccionDAO atraccionDAO = DAOFactory.getAtraccionDAO();
 		atraccionDAO.createArray();
+		PromocionDAO promocionDAO = DAOFactory.getPromociosDAO();
+		promocionDAO.findAll();
 		MaquinaDeSugerencias.iterarListas();
 		ItinerarioDAO itinerarioDAO = DAOFactory.getItinerarioDAO();
 		itinerarioDAO.generarItinerario();
