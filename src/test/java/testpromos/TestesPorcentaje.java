@@ -10,11 +10,6 @@ import promociones.PromoPorcentual;
 import promociones.Promocion;
 import tipos.Tipo;
 
-/**
- * 
- * @author Daniel Paz
- *
- */
 public class TestesPorcentaje {
 
 	Atraccion primerAtraccion;

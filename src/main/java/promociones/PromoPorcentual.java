@@ -6,34 +6,16 @@ import atraccion.Atraccion;
 import ofertable.Ofertable;
 import tipos.Tipo;
 
-/**
- * Clase PromoAbsoluta integra un tipo de descuento porcentual al precio total
- * 
- * @author Daniel Paz
- *
- */
 public class PromoPorcentual extends Promocion implements Ofertable {
 	Integer porcentaje = 0;
 	private String breveDescripcion;
 
-	/**
-	 * Constructor
-	 * 
-	 * @param nombre,               String !=null
-	 * @param tipo,                 tipo.Tipo !=null
-	 * @param descuento,porcentual, Integer !=null
-	 * @param breveDescripcion,     String !null
-	 */
 	public PromoPorcentual(String nombre, Tipo tipo, Integer porcentaje, String breveDescripcion) {
 		super(nombre, tipo);
 		this.porcentaje = porcentaje;
 		this.breveDescripcion = breveDescripcion;
 	}
 
-	/**
-	 * Calcula el costo como Promocion, pero le descuenta porcentualmente el @param
-	 * descuento
-	 */
 	@Override
 	public Integer getCosto() {
 		Integer costoTotal = 0;
@@ -60,9 +42,9 @@ public class PromoPorcentual extends Promocion implements Ofertable {
 		return breveDescripcion;
 	}
 
-    public Integer getPorcentaje() {
-        return porcentaje;
-    }
+	public Integer getPorcentaje() {
+		return porcentaje;
+	}
 
 	@Override
 	public Tipo getTipo() {

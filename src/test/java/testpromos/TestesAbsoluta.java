@@ -10,11 +10,6 @@ import promociones.PromoAbsoluta;
 import promociones.Promocion;
 import tipos.Tipo;
 
-/**
- * 
- * @author Daniel Paz, Gustavo Gonzalez
- *
- */
 public class TestesAbsoluta {
 
 	Atraccion primerAtraccion;

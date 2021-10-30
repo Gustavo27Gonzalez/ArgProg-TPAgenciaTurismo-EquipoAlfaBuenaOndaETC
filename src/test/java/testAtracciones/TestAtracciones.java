@@ -7,11 +7,6 @@ import org.junit.Test;
 import atraccion.Atraccion;
 import tipos.Tipo;
 
-/**
- * 
- * @author Gustavo Gonzalez
- *
- */
 public class TestAtracciones {
 
 	@Test

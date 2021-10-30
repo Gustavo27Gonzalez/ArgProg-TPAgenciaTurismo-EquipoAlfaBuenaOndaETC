@@ -7,14 +7,8 @@ import ofertable.Ofertable;
 import promociones.Promocion;
 import tipos.Tipo;
 
-/**
- * Clase usuario es el objeto que comprara o no distintos ofertables
- * 
- * @author Cesar De Maurizio
- *
- */
 public class Usuario {
-	
+
 	private final int id;
 	private final String nombre;
 	private int dineroDisponible;
@@ -26,14 +20,6 @@ public class Usuario {
 	public final ArrayList<Promocion> promocionesCompradas = new ArrayList<Promocion>();
 	public final ArrayList<Atraccion> comprasDeUsuario = new ArrayList<Atraccion>();
 
-	/**
-	 * Cosntructor
-	 * 
-	 * @param nombre,           String !=null
-	 * @param dineroDisponible, int !=null
-	 * @param preferencia,      tipoTipo !null
-	 * @param tiempo,           double !=null
-	 */
 	public Usuario(String nombre, int dineroDisponible, Tipo preferencia, double tiempo, int id) {
 		this.id = id;
 		this.nombre = nombre;
@@ -80,13 +66,6 @@ public class Usuario {
 		return preferencia;
 	}
 
-	/**
-	 * Toma un ofertable, debita su dinero, su tiempo, lo agrega a sus ofertables
-	 * comprados , y a su lista de compras general, luego le resta el cupo a las
-	 * Atracciones.
-	 * 
-	 * @param o
-	 */
 	public void comprar(Ofertable o) {
 		if (o.esPromocion()) {
 			this.restarDinero(o);
@@ -109,29 +88,14 @@ public class Usuario {
 
 	}
 
-	/**
-	 * Utiliza atraccion.entrarAlaAtraccion para restar un cupo
-	 * 
-	 * @param ofertable
-	 */
 	public void restarCupo(Ofertable ofertable) {
 		((Atraccion) ofertable).entrarALaAtraccion();
 	}
 
-	/**
-	 * Resta el tiempo del ofertable al tiempo del usuario.
-	 * 
-	 * @param ofertable
-	 */
 	public void restarTiempo(Ofertable ofertable) {
 		this.setTiempo(this.getTiempo() - (ofertable).getDuracion());
 	}
 
-	/**
-	 * Resta el costo del ofertable al dinero del usuario.
-	 * 
-	 * @param ofertable
-	 */
 	public void restarDinero(Ofertable ofertable) {
 		this.setDineroDisponible(this.getDineroDisponible() - ofertable.getCosto());
 	}

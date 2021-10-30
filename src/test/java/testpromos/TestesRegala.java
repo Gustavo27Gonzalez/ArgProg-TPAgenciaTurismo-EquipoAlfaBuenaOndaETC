@@ -12,11 +12,6 @@ import promociones.PromoRegala;
 import promociones.Promocion;
 import tipos.Tipo;
 
-/**
- * 
- * @author Daniel Paz
- *
- */
 public class TestesRegala {
 	Atraccion primerAtraccion;
 	Atraccion segundaAtraccion;

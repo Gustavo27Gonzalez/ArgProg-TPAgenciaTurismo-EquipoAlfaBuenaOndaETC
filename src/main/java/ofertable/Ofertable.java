@@ -2,13 +2,6 @@ package ofertable;
 
 import tipos.Tipo;
 
-/**
- * Interfaz publica que permite la utilizacion homogenea de algunos metodos
- * especificos en las clases, Promocion y Atraccion.
- * 
- * @author Franco Arabales
- *
- */
 public interface Ofertable {
 
 	public String getNombre();

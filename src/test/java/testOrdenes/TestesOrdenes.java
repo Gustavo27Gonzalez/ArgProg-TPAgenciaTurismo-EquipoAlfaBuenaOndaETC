@@ -14,11 +14,6 @@ import promociones.PromoAbsoluta;
 import promociones.Promocion;
 import tipos.Tipo;
 
-/**
- * 
- * @author Daniel Paz
- *
- */
 public class TestesOrdenes {
 
 	Atraccion primerAtraccion;
