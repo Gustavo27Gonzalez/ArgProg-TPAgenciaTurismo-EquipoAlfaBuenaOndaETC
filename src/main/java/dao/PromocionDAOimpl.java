@@ -97,7 +97,7 @@ public class PromocionDAOimpl implements PromocionDAO {
             statement.setString(1, t.getNombre());
             statement.setObject(2, t.getTipo());
             statement.setDouble(3, t.getCosto());
-            statement.setObject(5, ((PromoRegala) t).getRegalo());
+            statement.setObject(5, PromoRegala.getRegalo());
             statement.setDouble(6, ((PromoPorcentual) t).getPorcentaje());
 
             int rows = statement.executeUpdate();
@@ -141,8 +141,9 @@ public class PromocionDAOimpl implements PromocionDAO {
                 }
 
             }
-            return 0;
+            
         }
+		return 0;
     }
 
     public int delete(Promocion t) {
@@ -166,8 +167,9 @@ public class PromocionDAOimpl implements PromocionDAO {
                 }
 
             }
-            return 0;
+            
         }
+		return 0;
     }
 
     private Promocion toPromo(ResultSet resultados) throws Exception {
@@ -197,7 +199,7 @@ public class PromocionDAOimpl implements PromocionDAO {
         return promo;
     }
 
-    private Atraccion[] atraccionesDeLaPromocion(Long atraccion1, Long atraccion2) throws Exception {
+    public Atraccion[] atraccionesDeLaPromocion(Long atraccion1, Long atraccion2) throws Exception {
         Atraccion[] promos = new Atraccion[2];
         try {
 
