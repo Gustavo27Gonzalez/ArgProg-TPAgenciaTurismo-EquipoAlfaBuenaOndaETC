@@ -6,6 +6,7 @@ import java.sql.SQLException;
 
 import atraccion.Atraccion;
 import jdbc.ConnectionProvider;
+import promociones.Promocion;
 import usuario.Usuario;
 
 public class ItinerarioDAO {
@@ -22,6 +23,13 @@ public class ItinerarioDAO {
 					PreparedStatement statement = conn.prepareStatement(sql);
 					statement.setLong(1, usuario.getId());
 					statement.setString(2, atraccion.getNombre());
+					statement.executeUpdate();
+				}
+				
+				for (Promocion promocion : usuario.promocionesCompradas) {
+					PreparedStatement statement = conn.prepareStatement(sql);
+					statement.setLong(1, usuario.getId());
+					statement.setString(2, promocion.getNombre());
 					statement.executeUpdate();
 				}
 			}

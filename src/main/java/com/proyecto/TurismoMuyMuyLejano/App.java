@@ -7,6 +7,7 @@ import dao.AtraccionDAO;
 import dao.DAOFactory;
 import dao.ItinerarioDAO;
 import dao.PromocionDAO;
+import dao.PromocionDAOimpl;
 import dao.UsuarioDAO;
 import maquinaDeSugerencias.MaquinaDeSugerencias;
 
