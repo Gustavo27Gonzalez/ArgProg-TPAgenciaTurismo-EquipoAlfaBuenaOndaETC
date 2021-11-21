@@ -10,13 +10,14 @@ import java.util.List;
 
 import atraccion.Atraccion;
 import jdbc.ConnectionProvider;
+import ofertable.Ofertable;
 import tipos.Tipo;
 
 public class AtraccionDAO{
-	
+
 	public static ArrayList<Atraccion> listaAtracciones = new ArrayList<Atraccion>();
 	private Connection conn;
-	
+
 	public int insert(Atraccion atraccion) throws SQLException {
 		try {
 			String sql = "INSERT INTO atracciones(id, nombre, tipo, costo, duracion, cupo, descripcion) VALUES (?, ?, ?, ?, ?, ?, ?)";
@@ -125,7 +126,7 @@ public class AtraccionDAO{
 			}
 		}
 	}
-	
+
 	public Atraccion findByAtraccionId(int atraccionID) throws SQLException {
 		try {
 			String sql = "SELECT * FROM \"atracciones\" WHERE id = ?";
@@ -237,27 +238,27 @@ public class AtraccionDAO{
 			}
 		}
 	}
-	
+
 	public void actualizarDBAtracciones() throws SQLException {
 		for (Atraccion atraccion : listaAtracciones) {
 			this.update(atraccion);
 		}
 	}
-	
-	/*
-	 try {
-			
+
+	public static void actualizarCupo(Ofertable ofertable) {
+		try {
+			String sql = "UPDATE atracciones SET cupo = cupo - 1 WHERE nombre = ?";
+			Connection conn = ConnectionProvider.getConnection();
+
+			PreparedStatement statement = conn.prepareStatement(sql);
+			statement.setString(1, ofertable.getNombre());
+			statement.executeUpdate();
+
+
 		} catch (Exception e) {
 			throw new MissingDataException(e);
-		} finally {
-			if (conn != null) {
-				try {
-					conn.close();
-				} catch (SQLException e) {
-				e.printStackTrace();
-				}
-			}
 		}
-	 */
+	}
+	}
 
-}
+
