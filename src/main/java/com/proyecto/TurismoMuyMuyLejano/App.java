@@ -3,12 +3,10 @@ package com.proyecto.TurismoMuyMuyLejano;
 import java.io.IOException;
 import java.sql.SQLException;
 
-import dao.AtraccionDAO;
-import dao.DAOFactory;
-import dao.ItinerarioDAO;
-import dao.PromocionDAO;
-import dao.UsuarioDAO;
+import dao.*;
 import maquinaDeSugerencias.MaquinaDeSugerencias;
+import promociones.Promocion;
+import tipos.Tipo;
 
 
 public class App {
@@ -21,10 +19,6 @@ public class App {
 		PromocionDAO promocionDAO = DAOFactory.getPromociosDAO();
 		promocionDAO.findAll();
 		MaquinaDeSugerencias.iterarListas();
-		ItinerarioDAO itinerarioDAO = DAOFactory.getItinerarioDAO();
-		itinerarioDAO.generarItinerario();
-		usuarioDAO.actualizarDBUsuarios();
-		
 	}
 
 }

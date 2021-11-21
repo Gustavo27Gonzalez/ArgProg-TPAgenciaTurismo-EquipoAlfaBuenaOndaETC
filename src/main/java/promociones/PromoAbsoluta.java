@@ -4,6 +4,9 @@ import atraccion.Atraccion;
 import ofertable.Ofertable;
 import tipos.Tipo;
 
+import java.util.ArrayList;
+import java.util.Collections;
+
 public class PromoAbsoluta extends Promocion implements Ofertable {
 
 	private Integer descuento = 0;
@@ -28,7 +31,12 @@ public class PromoAbsoluta extends Promocion implements Ofertable {
 
 	@Override
 	public Integer getLugaresDisponibles() {
-		return null;
+		ArrayList<Integer> lugares = new ArrayList<Integer>();
+		for (Atraccion atracciones : atraccionesDePromo){
+			lugares.add(atracciones.getLugaresDisponibles());
+		}
+		Collections.sort(lugares);
+		return lugares.indexOf(0);
 	}
 
 	@Override

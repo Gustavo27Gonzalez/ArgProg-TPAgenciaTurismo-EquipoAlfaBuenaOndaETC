@@ -1,5 +1,7 @@
 package promociones;
 
+import java.util.ArrayList;
+import java.util.Collections;
 import java.util.Iterator;
 
 import atraccion.Atraccion;
@@ -30,7 +32,12 @@ public class PromoPorcentual extends Promocion implements Ofertable {
 
 	@Override
 	public Integer getLugaresDisponibles() {
-		return null;
+		ArrayList<Integer> lugares = new ArrayList<Integer>();
+		for (Atraccion atracciones : atraccionesDePromo){
+			lugares.add(atracciones.getLugaresDisponibles());
+		}
+		Collections.sort(lugares);
+		return lugares.indexOf(0);
 	}
 
 	@Override
